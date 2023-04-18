@@ -1,9 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* .card-body{
-  border-radius: 4px;
-  margin-top: 5px;
-  position: fixed;
-  width: 280px;
-  height: 300px;
-  padding: 15px;
+/* .w-2\/5{
+    width:45%
+}
+.text-base{
+    font-size: 1.01rem;
+}
+.text-xl{
+    line-height: 1.4rem;
+}
+.text-\[\.88rem\]{
+    line-height: 1.3rem;
 } */
