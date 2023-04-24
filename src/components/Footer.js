@@ -5,7 +5,7 @@ import {FaFacebookSquare, FaInstagram, FaTwitterSquare} from 'react-icons/fa'
 function Footer() {
     return (
 	<>
-	<div className='bg-black w-screen bg-opacity-90 pb-10 font-textF'>
+	<div className='bg-black bg-opacity-90 pb-10 font-textF'>
         <div className='flex flex-row font-textF'>
 	<div className='w-full flex flex-row mt-1 pt-6 px-10 justify-between border-r border-white'>
 

@@ -26,72 +26,82 @@ function Home() {
 
 	return (
 		<>
-			<div className='px-12 py-14 font-textF w-screen '>
+			<div className='py-14 px-12 w-full font-textF'>
 				{/*start of top(first) section*/}
-				<div className='flex flex-row justify-between'>
+				<div className='flex flex-row w-full'>
 					{/* start of search bar */}
-					<div className='flex flex-col pr-12 w-[55%]'>
+					<div className='flex flex-col w-4/6'>
 						<h1 className="text-6xl text-blue-500 text-center font-semibold">health Topics</h1>
 						<p className='text-center font-medium tracking-wide text-2xl mt-6 '>
 							Find trusted information on <br />medical conditions from our experts
 						</p>
 						<input type="searchBox"
-							className="rounded-lg mt-4 py-4 px-4 text-lg font-semibold bg-blue-50 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+							className="rounded-lg w-4/6 self-center mt-4 py-4 px-4 text-lg font-semibold bg-blue-50 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
 							placeholder="Cancer" />
 						<p className='text-2xl underline mt-12 font-semibold tracking-wide text-center'>Frequently Visited</p>
-						<div className='flex flex-row ml-8 mt-10'>
-							<div className='flex flex-col'>
-								<img className='w-20' src={diseases} alt='' />
+						<div className='flex w-full flex-row mt-10 pr-4'>
+							<div className='flex flex-col w-1/5 justify-center pb-4 px-4 bg-white rounded-[50%] shadow-lg'>
+								<img className='w-20 self-center' src={diseases} alt='' />
 								<p className=' font-medium text-center text-lg'>Respiratory<br />diseases</p>
 							</div>
-							<div className='flex ml-6 flex-col'>
-								<img className=' w-20' src={tab} alt='' />
+							<div className='flex flex-col ml-2 w-1/5 justify-center pb-4 px-4 bg-white rounded-[50%] shadow-lg'>
+								<img className='self-center w-20' src={tab} alt='' />
 								<p className='text-center font-medium text-lg'>Liver<br />diseases</p>
 							</div>
-							<div className='flex ml-6 flex-col'>
-								<img className='w-20 ' src={diabetes} alt='' />
+							<div className='flex flex-col justify-center ml-2 w-1/5 pb-4 px-4 bg-white rounded-[50%] shadow-lg'>
+								<img className='w-20 self-center' src={diabetes} alt='' />
 								<p className='text-center font-medium text-lg'>type 2<br />diabetes</p>
 							</div>
-							<div className='flex ml-6 flex-col'>
-								<img className='w-20' src={faty} alt='' />
+							<div className='flex flex-col justify-center ml-2 w-1/5 pb-4 px-4 bg-white rounded-[50%] shadow-lg'>
+								<img className='w-20 self-center' src={faty} alt='' />
 								<p className='text-center font-medium text-lg'>Obesity</p>
 							</div>
-							<div className='flex ml-6 flex-col'>
-								<img className='w-20' src={Wavy} alt='' />
+							<div className='flex flex-col justify-center ml-2 w-1/5 pb-4 px-4 bg-white rounded-[50%] shadow-lg'>
+								<img className='w-20 self-center' src={Wavy} alt='' />
 								<p className='text-center font-medium text-lg'>Cancer</p>
 							</div>
-							<div className='flex ml-6 mt-10'>
-								<img className='h-8 p-1 border rounded-[50%]' src={arrow} alt='' />
+							<div className='flex p-1 self-center h-8 border rounded-[50%] ml-4 border'>
+								<img className='w-24' src={arrow} alt='' />
 							</div>
 						</div>
 					</div>
 					{/* end of search bar */}
 					{/* start of right div with images */}
-					<div className="">
-						<img className='h-96 ' src={doctors} alt='' />
-						<div className='flex flex-row'>
-							<img className='h-[430px] -mt-[300px] -ml-40' src={nurse} alt='' />
-							<div className='-mt-[77px] -ml-1 text-blue-500 text-[80px] tracking-wide'>
+					<div className="w-full flex flex-col w-2/6">
+						<div className='flex flex-col'>
+						<div className='pl-40 h-20'>
+							<img className='' src={doctors} alt='' />
+						</div>
+							<div className=''>
+								<div className='mt-2'>
+								<img className='h-[430px]' src={nurse} alt='' />
+								</div>
+								<div className='flex flex-col pr-24 -mt-[186px] items-end text-blue-500 text-[80px] tracking-wide'>
 								<p className='' >.......</p>
 								<p className='-mt-[100px]' >.......</p>
 								<p className='-mt-[100px]' >.......</p>
 								<p className='-mt-[100px]' >.......</p>
 								<p className='-mt-[100px]' >.......</p>
+								</div>
 							</div>
+							
 						</div>
+						
 					</div>
 					{/* end of right div with images */}
 				</div>
 				{/*end of top(first) section*/}
 				{/*start of second section*/}
-				<div className='flex flex-col pt-14'>
-					<h1 className='text-4xl text-center font-semibold'><span className='text-blue-500'>We care</span> about your Mental health</h1>
-					<div className='flex mt-6 flex-row'>
-						<div className='w-[70%]'>
-							<p className='text-center text-lg ml-36'>We are dedicated to mental health of children, adolescets & for the past 15 years. We help you address many academic, relation, behaviour & emotional concerns.</p>
+				<div className='flex flex-col w-full pt-14'>
+					<div>
+					   <h1 className='text-4xl text-center font-semibold'><span className='text-blue-500'>We care</span> about your Mental health</h1>
+					</div>
+					<div className='flex flex-row mt-6'>
+						<div className='w-2/3 px-16'>
+							<p className='text-center text-lg'>We are dedicated to mental health of children, adolescets & for the past 15 years. We help you address many academic, relation, behaviour & emotional concerns.</p>
 						</div>
-						<div className=''>
-							<button className='flex ml-12 text-xl flex-row bg-blue-500 rounded-full text-white py-5 px-5 hover:bg-blue-300 border-2 hover:border-blue-500'>
+						<div className='w-1/3 flex items-center justify-center'>
+							<button className='flex flex-row text-xl bg-blue-500 rounded-full text-white py-5 px-5 hover:bg-blue-300 border-2 hover:border-blue-500'>
 								Get in touch
 								<img className=' ml-2' src={arrow3} alt='' />
 							</button>
@@ -99,10 +109,11 @@ function Home() {
 					</div>
 				</div>
 				{/*end of second section*/}
+				
 				{/*start of third(articles) section*/}
 				<div className='pt-14'>
 					<h1 className='text-4xl text-center font-bold'>Featured Articles</h1>
-					<div className='flex flex-row mt-12'>
+					<div className='flex flex-row pt-12'>
 						<div className='text-blue-500 mt-[260px] text-[80px] tracking-wide'>
 							<p className='' >.......</p>
 							<p className='-mt-[100px]' >.......</p>
@@ -175,12 +186,18 @@ function Home() {
 
 				{/*start of fifth(clients) section*/}
 
-				<div className='pt-12'>
+				<div className='pt-12 '>
 					<div className='flex flex-row justify-between'>
 						<h1 className='text-blue-500 mt-4 text-2xl font-medium'>What say our clients?</h1>
 						<div className='flex flex-row'>
-							<img className='h-12 p-4 mr-4 border rounded-[50%]' src={arrow} alt='' />
+							<div className='flex items-center px-4 mr-4 border rounded-[50%]'>
+							<svg className='' xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="none">
+							<path d="M6.87502 15.3001L0.275016 8.70006C0.175016 8.60006 0.104015 8.49173 0.0620154 8.37506C0.0200154 8.25839 -0.000651042 8.13339 1.56251e-05 8.00006C1.56251e-05 7.86673 0.0210158 7.74173 0.0630158 7.62506C0.105016 7.50839 0.175682 7.40006 0.275016 7.30006L6.87502 0.70006C7.05835 0.516727 7.28768 0.421061 7.56302 0.413061C7.83835 0.405061 8.07568 0.500727 8.27501 0.70006C8.47501 0.883394 8.57935 1.11273 8.58802 1.38806C8.59668 1.66339 8.50068 1.90073 8.30002 2.10006L3.40002 7.00006H14.575C14.8583 7.00006 15.096 7.09606 15.288 7.28806C15.48 7.48006 15.5757 7.71739 15.575 8.00006C15.575 8.28339 15.4793 8.52106 15.288 8.71306C15.0967 8.90506 14.859 9.00073 14.575 9.00006H3.40002L8.30002 13.9001C8.48335 14.0834 8.57935 14.3167 8.58802 14.6001C8.59668 14.8834 8.50068 15.1167 8.30002 15.3001C8.11668 15.5001 7.88335 15.6001 7.60002 15.6001C7.31668 15.6001 7.07502 15.5001 6.87502 15.3001Z" fill="#407BFF"/>
+							</svg>
+							</div>
+							<div>
 							<img className='h-12 p-4 border rounded-[50%]' src={arrow} alt='' />
+							</div>
 						</div>
 					</div>
 
@@ -254,17 +271,18 @@ function Home() {
 				</div>
 
 				{/*end of sixth(experts) section*/}
-
 				{/*start of seventh(contact) section*/}
 
-				<div className="flex flex-row mt-8">
-					<div className='flex flex-col pr-8 w-[60%] pt-8'>
+				<div className="flex w-full flex-row mt-8">
+					<div className='flex w-full flex-col pt-8'>
 						<h1 className='text-blue-500 text-3xl font-semibold'>WellBe.</h1>
 						<h1 className='text-5xl mt-6 font-semibold'>Still have some Questions?</h1>
 						<p className='mt-6 text-lg'>Send a message to one of our Health expert</p>
 					</div>
-					<ContactForm />
+				
+					<div className='w-full'><ContactForm /></div>					
 				</div>
+
 
 				{/*end of seventh(contact) section*/}
 
