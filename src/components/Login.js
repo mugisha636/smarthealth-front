@@ -1,7 +1,29 @@
 import login from '../images/login.png'
+import React, {useState} from 'react'
 import {NavLink, Outlet} from 'react-router-dom'
 
 function Login() {
+
+	
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+	async function signIn(){
+        let loginCredentials = {email, password}
+        console.log(loginCredentials)
+
+        let result = await fetch("https://smart-health.onrender.com/api-docs/#/Authentication/post_login", {
+            method:"POST",
+            body: JSON.stringify(loginCredentials),
+            headers:{
+                "Content-type":'application/json',
+                "Accept":'application/json'
+            }
+        })
+        result = await result.json()
+        console.log("result", result)
+    }
+
     return (
 
         <div className='bg-white'>
@@ -44,6 +66,7 @@ function Login() {
                             </span>
 
                             <input type="email"
+				onChange={(e)=> setEmail(e.target.value)}
                                 className="block mt-2 w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 placeholder="Email address" />
                         </div>
@@ -59,6 +82,7 @@ function Login() {
                             </span>
 
                             <input type="password" 
+			    onChange={(e)=> setPassword(e.target.value)}
                             className="block mt-2 w-full justify-center px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" 
                             placeholder="********" />
                         </div>
@@ -71,7 +95,9 @@ function Login() {
                         </div>
 
                         <div className="mt-3">
-                            <button className="w-full shadow-lg shadow-blue-300 mt-4 px-6 py-3 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                            <button 
+				onClick={signIn}
+				className="w-full shadow-lg shadow-blue-300 mt-4 px-6 py-3 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                                 Login
                             </button>
 

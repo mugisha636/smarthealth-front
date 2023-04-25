@@ -10,13 +10,13 @@ function SignUp() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     
-    async function signUp(){
-        let items = {firstName, lastName, telephone, email, password}
-        console.log(items)
+    async function register(){
+        let signupCredentials = {firstName, lastName, telephone, email, password}
+        console.log(signupCredentials)
 
         let result = await fetch("https://smart-health.onrender.com/api-docs/#/Authentication/post_signup", {
             method:"POST",
-            body: JSON.stringify(items),
+            body: JSON.stringify(signupCredentials),
             headers:{
                 "Content-type":'application/json',
                 "Accept":'application/json'
@@ -211,7 +211,7 @@ function SignUp() {
 
                     <div className="mt-3">
                         <button 
-                        onClick={signUp}
+                        onClick={register}
                         className="w-full px-6 py-3 text-sm font-bold tracking-wide text-white text-clip capitalize shadow-lg shadow-blue-300 transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                             Sign Up
                         </button>
