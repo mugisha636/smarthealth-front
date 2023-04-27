@@ -12,9 +12,9 @@ function SignUp() {
     
     async function register(){
         let signupCredentials = {firstName, lastName, telephone, email, password}
-        console.log(signupCredentials)
+        {/*console.log(signupCredentials)*/}
 
-        let result = await fetch("https://smart-health.onrender.com/api-docs/#/Authentication/post_signup", {
+        let result = await fetch("https://smart-health.onrender.com/api/signup", {
             method:"POST",
             body: JSON.stringify(signupCredentials),
             headers:{

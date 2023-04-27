@@ -10,9 +10,9 @@ function Login() {
 
 	async function signIn(){
         let loginCredentials = {email, password}
-        console.log(loginCredentials)
+        {/*console.log(loginCredentials)*/}
 
-        let result = await fetch("https://smart-health.onrender.com/api-docs/#/Authentication/post_login", {
+        let result = await fetch("https://smart-health.onrender.com/api/login", {
             method:"POST",
             body: JSON.stringify(loginCredentials),
             headers:{

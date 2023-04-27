@@ -70,8 +70,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white focus:outline-none hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white focus:outline-none hover:bg-blue-500 hover:text-white'>Add to cart</button>
 	</div>
 	</div>
 	<div className='ml-4 w-full'>
@@ -79,8 +79,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white focus:outline-none hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 focus:outline-none hover:text-white'>Add to cart</button>
 	</div>
 	</div>
 	<div className='ml-4 w-full'>
@@ -88,8 +88,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 focus:outline-none hover:text-blue-500'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white focus:outline-none'>Add to cart</button>
 	</div>
 	</div>
 	<div className='ml-4 w-full'>
@@ -97,8 +97,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 focus:outline-none'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white focus:outline-none'>Add to cart</button>
 	</div>
 	</div>
 	
@@ -111,8 +111,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 focus:outline-none hover:text-blue-500'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white focus:outline-none'>Add to cart</button>
 	</div>
 	</div>
 	<div className='ml-4 w-full'>
@@ -120,8 +120,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 focus:outline-none hover:text-blue-500'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white focus:outline-none'>Add to cart</button>
 	</div>
 	</div>
 	<div className='ml-4 w-full'>
@@ -129,8 +129,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 focus:outline-none hover:text-blue-500'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white focus:outline-none'>Add to cart</button>
 	</div>
 	</div>
 	<div className='ml-4 w-full'>
@@ -138,8 +138,8 @@ function Products() {
 	<p className='mt-2 text-black text-lg font-semibold tracking-wide'>Collagen gummies</p>
 	<p className='text-black text-2xl text-opacity-80 mt-2'>23,000RWF</p>
 	<div className='flex flex-row mt-3'>
-	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500'>Buy</button>
-	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white'>Add to cart</button>
+	<button className='py-2 rounded-full w-full bg-blue-500 text-white font-semibold border border-blue-500 focus:bg-gradient-to-br focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 focus:outline-none'>Buy</button>
+	<button className='ml-2 py-2 rounded-full w-full bg-white text-blue-500 font-semibold border border-blue-500 focus:bg-gradient-to-tl focus:from-blue-600 focus:to-blue-50 focus:text-white hover:bg-blue-500 hover:text-white focus:outline-none'>Add to cart</button>
 	</div>
 	</div>
 	

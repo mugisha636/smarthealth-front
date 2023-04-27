@@ -41,8 +41,12 @@ function Footer() {
 	</div>
 
 	<div className='flex flex-col w-full pl-8 pr-16 pt-6'>
-	<div className='flex flex-row'>
-	<img className='h-10' src={twitter} alt=''/>
+	<div className='flex flex-row items-center'>
+	<span className=''>
+	<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" fill="none">
+	<path d="M4.66668 30.1668H27.3333C28.0848 30.1668 28.8055 29.8683 29.3368 29.337C29.8682 28.8056 30.1667 28.0849 30.1667 27.3335V4.66683C30.1667 3.91538 29.8682 3.19471 29.3368 2.66336C28.8055 2.13201 28.0848 1.8335 27.3333 1.8335H10.3333C9.5819 1.8335 8.86123 2.13201 8.32987 2.66336C7.79852 3.19471 7.50001 3.91538 7.50001 4.66683V27.3335C7.50001 28.0849 7.2015 28.8056 6.67015 29.337C6.13879 29.8683 5.41812 30.1668 4.66668 30.1668ZM4.66668 30.1668C3.91523 30.1668 3.19456 29.8683 2.66321 29.337C2.13185 28.8056 1.83334 28.0849 1.83334 27.3335V14.5835C1.83334 13.0252 3.10834 11.7502 4.66668 11.7502H7.50001M24.5 18.8335H13.1667M20.25 24.5002H13.1667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+	</span>
 	<p className='text-white text-2xl mt-2 ml-1'>Newsletter</p>
 	</div>
 	<h1 className='text-white text-4xl pr-32 font-medium mt-4'>get the best in health and wellness</h1>

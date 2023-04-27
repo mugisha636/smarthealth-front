@@ -9,9 +9,15 @@ import About from './components/About'
 import ForgotPassword from './components/ForgotPassword'
 import UpdatePassword from './components/UpdatePassword'
 import UpdatedPassword from './components/UpdatedPassword'
-import Departments from './components/Departments'
+// import Departments from './components/Departments'
 import Products from './components/Products'
 import Appointments from './components/Appointments'
+import PatientSidebar from './components/PatientSidebar'
+import PatientDashboard from './components/PatientDashboard'
+import PatientMessages from './components/PatientMessages'
+import PatientCalendar from './components/PatientCalendar'
+import PatientAppointments from './components/PatientAppointments'
+import PatientSettings from './components/PatientSettings'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function WellBe() {
@@ -30,8 +36,17 @@ function WellBe() {
 	<Route path='/About' element={<><NavBar/><About /><Footer/></>}/>
 	{/*<Route path='/Departments' element={<><NavBar/><Departments /><Footer/></>}/>*/}
 	<Route path='/Appointments' element={<><NavBar/><Appointments /><Footer/></>}/>
-    	
+	
+	<Route path='/PatientSidebar' element={<PatientSidebar/>}>
+		<Route index element={<PatientDashboard />}/>
+		<Route path='PatientCalendar' element={<PatientCalendar />}/>
+		<Route path='PatientMessages' element={<PatientMessages />}/>
+		<Route path='PatientAppointments' element={<PatientAppointments />}/>
+		<Route path='PatientSettings' element={<PatientSettings />}/>
+	</Route>
+
 	</Routes>
+	
 	</BrowserRouter>
   );
 }

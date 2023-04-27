@@ -31,7 +31,7 @@ function Home() {
 				<div className='flex flex-row w-full'>
 					{/* start of search bar */}
 					<div className='flex flex-col w-4/6'>
-						<h1 className="text-6xl text-blue-500 text-center font-semibold">health Topics</h1>
+						<h1 className="text-6xl text-blue-500 text-center font-semibold">Health Topics</h1>
 						<p className='text-center font-medium tracking-wide text-2xl mt-6 '>
 							Find trusted information on <br />medical conditions from our experts
 						</p>
