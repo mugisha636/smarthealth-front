@@ -11,6 +11,7 @@ import UpdatePassword from './components/UpdatePassword'
 import UpdatedPassword from './components/UpdatedPassword'
 // import Departments from './components/Departments'
 import Products from './components/Products'
+import ChatAiSettings from './components/ChatAiSettings'
 import Appointments from './components/Appointments'
 import PatientSidebar from './components/PatientSidebar'
 import PatientDashboard from './components/PatientDashboard'
@@ -18,6 +19,10 @@ import PatientMessages from './components/PatientMessages'
 import PatientCalendar from './components/PatientCalendar'
 import PatientAppointments from './components/PatientAppointments'
 import PatientSettings from './components/PatientSettings'
+import FrequentlyAsked from './components/FrequentlyAsked'
+import ChatBoard from './components/ChatBoard'
+import NewChat from './components/NewChat'
+import ClearConversation from './components/ClearConversation'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function WellBe() {
@@ -31,7 +36,6 @@ function WellBe() {
 	<Route path='/ForgotPassword' element={<ForgotPassword />}/>
 	<Route path='/UpdatePassword' element={<UpdatePassword />}/>
 	<Route path='/UpdatedPassword' element={<UpdatedPassword />}/>
-	<Route path='/ChatAi' element={<ChatAi />}/>
 	<Route path='/Products' element={<><NavBar/><Products/><Footer/></>}/>
 	<Route path='/About' element={<><NavBar/><About /><Footer/></>}/>
 	{/*<Route path='/Departments' element={<><NavBar/><Departments /><Footer/></>}/>*/}
@@ -43,6 +47,14 @@ function WellBe() {
 		<Route path='PatientMessages' element={<PatientMessages />}/>
 		<Route path='PatientAppointments' element={<PatientAppointments />}/>
 		<Route path='PatientSettings' element={<PatientSettings />}/>
+	</Route>
+
+	<Route path='/ChatAi' element={<ChatAi />}>
+		<Route index element={<ChatBoard />}/>
+		<Route path='FrequentlyAsked' element={<FrequentlyAsked />}/>
+		<Route path='ChatBoard' element={<ClearConversation />}/>
+		<Route path='ChatAiSettings' element={<ChatAiSettings />}/>
+		<Route path='NewChat' element={<ChatBoard />}/>
 	</Route>
 
 	</Routes>

@@ -6,7 +6,7 @@ function NavBar() {
 
     return (
 <>
-            <div className="bg-white shadow-2xl rounded-b-[50px] shadow-gray-200 sticky top-0 font-textF px-16 py-4">
+            <div className="bg-white z-40 shadow-2xl rounded-b-[50px] shadow-gray-200 sticky top-0 font-textF px-16 py-4">
 
                 {/* start of top navbar */}
                 <div className='flex justify-between flex-row'>

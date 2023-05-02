@@ -1,30 +1,39 @@
 import '../App.css'
-import {NavLink} from 'react-router-dom'
-import React, {useState} from 'react'
+import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react'
 
 function SignUp() {
 
     const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("") 
+    const [lastName, setLastName] = useState("")
     const [telephone, setTelephone] = useState("")
+	const [sex, setSex] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    
-    async function register(){
-        let signupCredentials = {firstName, lastName, telephone, email, password}
-        {/*console.log(signupCredentials)*/}
 
-        let result = await fetch("https://smart-health.onrender.com/api/signup", {
-            method:"POST",
-            body: JSON.stringify(signupCredentials),
-            headers:{
-                "Content-type":'application/json',
-                "Accept":'application/json'
-            }
-        })
-        result = await result.json()
-        console.log("result", result)
+    async function register() {
+
+        const signupCredentials = { firstName, lastName, sex, telephone, email, password }
+        console.log(signupCredentials)
+
+        try {
+            const response = await fetch("https://smart-health.onrender.com/api/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(signupCredentials),
+            });
+
+            const result = await response.json();
+            console.log("user:", result)
+        } catch (error) {}
     }
+	
+		const sexChanged = (e) => {
+			e.preventDefault();
+			setSex(e.target.value)
+		}
 
 
     return (
@@ -59,7 +68,7 @@ function SignUp() {
                     {/* Start of names */}
 
                     <div className='flex'>
-                    <div className="flex flex-col w-screen mt-8">
+                        <div className="flex flex-col w-screen mt-8">
                             <p className=' text-xs'>
                                 First name
                             </p>
@@ -67,9 +76,9 @@ function SignUp() {
                                 className="block mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
           dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none
           focus:ring focus:ring-opacity-40"
-          value={firstName} 
-          onChange={(e)=> setFirstName(e.target.value)}
-          placeholder="" />
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                                placeholder="" />
                         </div>
 
                         <div className="flex flex-col w-screen ml-2 mt-8">
@@ -80,9 +89,9 @@ function SignUp() {
                                 className="block mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
           dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none
           focus:ring focus:ring-opacity-40"
-          value={lastName} 
-          onChange={(e)=> setLastName(e.target.value)}
-          placeholder="" />
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                                placeholder="" />
                         </div>
                     </div>
 
@@ -91,7 +100,7 @@ function SignUp() {
                     {/* Start of phone number */}
 
                     <div className='flex mt-4'>
-                    <div className="flex flex-col w-screen">
+                        <div className="flex flex-col w-screen">
                             <p className=' text-xs'>
                                 Country code
                             </p>
@@ -102,16 +111,16 @@ function SignUp() {
                         </div>
 
                         <div className="flex flex-col w-screen ml-2">
-                        <p className=' text-xs'>
-                            Phone number
-                        </p>
+                            <p className=' text-xs'>
+                                Phone number
+                            </p>
                             <input type="tel"
                                 className="block mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
           dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none
-          focus:ring focus:ring-opacity-40" 
-          value={telephone} 
-          onChange={(e)=> setTelephone(e.target.value)}
-          placeholder="" />
+          focus:ring focus:ring-opacity-40"
+                                value={telephone}
+                                onChange={(e) => setTelephone(e.target.value)}
+                                placeholder="" />
                         </div>
                     </div>
 
@@ -124,14 +133,24 @@ function SignUp() {
                             Select your gender
                         </p>
                         <div className="ml-4 flex flex-row">
-                            <input type='radio' />
+                            <input type='radio' 
+									name='sex'
+									value='male'
+									checked={sex === 'male'}
+									onChange={sexChanged}
+							/>
                             <p className="w-full ml-1 text-xs tracking-wide text-black capitalize">
                                 Male
                             </p>
                         </div>
 
                         <div className="ml-4 flex flex-row">
-                            <input type='radio' />
+                            <input type='radio' 
+									name='sex'
+									value='female'
+									checked={sex === 'female'}
+									onChange={sexChanged}
+							/>
                             <p className="w-full ml-1 tracking-wide text-black text-xs capitalize">
                                 Female
                             </p>
@@ -159,8 +178,8 @@ function SignUp() {
 
                         <input type="email"
                             className="block text-xs w-full h-8 py-3 mt-2 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                            value={email} 
-                            onChange={(e)=> setEmail(e.target.value)}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="you@example.com" />
 
                     </div>
@@ -176,8 +195,8 @@ function SignUp() {
                             </p>
                             <input type="password"
                                 className="block w-full mt-2 h-8 px-2 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                                value={password} 
-                                onChange={(e)=> setPassword(e.target.value)}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 placeholder="" />
                             <p className='text-[0.6rem] text-gray-400 '>
                                 must be 6 or more characters
@@ -210,9 +229,9 @@ function SignUp() {
                     {/* End of terms and conditions check box */}
 
                     <div className="mt-3">
-                        <button 
-                        onClick={register}
-                        className="w-full px-6 py-3 text-sm font-bold tracking-wide text-white text-clip capitalize shadow-lg shadow-blue-300 transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                        <button
+                            onClick={register}
+                            className="w-full px-6 py-3 text-sm font-bold tracking-wide text-white text-clip capitalize shadow-lg shadow-blue-300 transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                             Sign Up
                         </button>
 

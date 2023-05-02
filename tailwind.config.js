@@ -3,19 +3,19 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
-      backgroundImage: theme =>({
+      signupBackgroundImage: theme => ({
         'signBg': "url('/src/images/SignUpBg.png')"
       }),
-      backgroundImage: theme =>({
+      aboutBackgroundImage: theme => ({
         'aboutHeaderBg': "url('/src/images/aboutHeader.png')"
       }),
-      backgroundImage: theme =>({
+      appointmentBackgroundImage: theme => ({
         'appoint': "url('/src/images/appoint.png')"
       }),
-      backgroundImage: theme =>({
+      productBackgroundImage: theme => ({
         'productsHeaderBg': "url('/src/images/productHeader.png')"
       }),
-      fontFamily: theme=>({
+      fontFamily: theme => ({
         'textF': ['poppins']
       }),
     },
