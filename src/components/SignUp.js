@@ -1,6 +1,8 @@
 import '../App.css'
 import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react'
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 function SignUp() {
 
@@ -13,21 +15,21 @@ function SignUp() {
 
     async function register() {
 
-        const signupCredentials = { firstName, lastName, sex, telephone, email, password }
-        console.log(signupCredentials)
+        const signupCredentials = { firstName, lastName, telephone, sex, email, password }
 
         try {
-            const response = await fetch("https://smart-health.onrender.com/api/signup", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(signupCredentials),
-            });
-
-            const result = await response.json();
-            console.log("user:", result)
-        } catch (error) {}
+				const response = await fetch("https://smart-health.onrender.com/api/signup", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(signupCredentials),
+				});
+				
+				const result = await response.json();
+			} 
+		
+		catch (error) {}
     }
 	
 		const sexChanged = (e) => {
@@ -99,30 +101,16 @@ function SignUp() {
 
                     {/* Start of phone number */}
 
-                    <div className='flex mt-4'>
-                        <div className="flex flex-col w-screen">
-                            <p className=' text-xs'>
-                                Country code
-                            </p>
-                            <input type="text"
-                                className="block mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
-          dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none
-          focus:ring focus:ring-opacity-40" placeholder="" />
-                        </div>
-
-                        <div className="flex flex-col w-screen ml-2">
+                        <div className="flex flex-col w-full ml-2">
                             <p className=' text-xs'>
                                 Phone number
                             </p>
-                            <input type="tel"
-                                className="block mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
-          dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none
-          focus:ring focus:ring-opacity-40"
+                            <PhoneInput type="tel"
+                                className='mt-2'
                                 value={telephone}
-                                onChange={(e) => setTelephone(e.target.value)}
-                                placeholder="" />
+                                onChange={(e) => setTelephone(telephone)}
+                                placeholder="enter phone number here" />
                         </div>
-                    </div>
 
                     {/* End of phone number */}
 

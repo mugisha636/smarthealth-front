@@ -13,15 +13,13 @@ function Login() {
         console.log(loginCredentials)
 
         let result = await fetch("https://smart-health.onrender.com/api/login", {
-            method: "GET",
+            method: "POST",
             body: JSON.stringify(loginCredentials),
             headers: {
-                "Content-type": 'application/json',
-                "Accept": 'application/json'
+                "Content-type": 'application/json'
             }
         })
         const response = await result.json();
-        console.log("user:", result)
     }
 
     return (

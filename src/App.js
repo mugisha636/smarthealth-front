@@ -25,42 +25,49 @@ import NewChat from './components/NewChat'
 import ClearConversation from './components/ClearConversation'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-function WellBe() {
-  return (
-	<BrowserRouter>
-	<Routes>
-	<Route index element={<><NavBar/><Home/><Footer/></>}/>
+	function WellBe() {
+	  return (
+		<BrowserRouter>
+		<Routes>
+		{/* start of Landing page */}
+		<Route index element={<><NavBar/><Home/><Footer/></>}/>
+		{/* end of Landing page */}
+		
+		
+		<Route path='/Login' element={<Login />}/>
+		<Route path='/SignUp' element={<SignUp />}/>
+		<Route path='/ForgotPassword' element={<ForgotPassword />}/>
+		<Route path='/UpdatePassword' element={<UpdatePassword />}/>
+		<Route path='/UpdatedPassword' element={<UpdatedPassword />}/>
+		<Route path='/Products' element={<><NavBar/><Products/><Footer/></>}/>
+		<Route path='/About' element={<><NavBar/><About /><Footer/></>}/>
+		{/*<Route path='/Departments' element={<><NavBar/><Departments /><Footer/></>}/>*/}
+		<Route path='/Appointments' element={<><NavBar/><Appointments /><Footer/></>}/>
+		
+		{/* start of User Dashboard */}
+		<Route path='/PatientSidebar' element={<PatientSidebar/>}>
+			<Route index element={<PatientDashboard />}/>
+			<Route path='PatientCalendar' element={<PatientCalendar />}/>
+			<Route path='PatientMessages' element={<PatientMessages />}/>
+			<Route path='PatientAppointments' element={<PatientAppointments />}/>
+			<Route path='PatientSettings' element={<PatientSettings />}/>
+		</Route>
+		{/* end of user dashbord */}
+		
+		{/* start of ChatAi */}
+		<Route path='/ChatAi' element={<ChatAi />}>
+			<Route index element={<ChatBoard />}/>
+			<Route path='FrequentlyAsked' element={<FrequentlyAsked />}/>
+			<Route path='ChatBoard' element={<ClearConversation />}/>
+			<Route path='ChatAiSettings' element={<ChatAiSettings />}/>
+			<Route path='NewChat' element={<ChatBoard />}/>
+		</Route>
+		{/* end of ChatAi */}
 
-	<Route path='/Login' element={<Login />}/>
-	<Route path='/SignUp' element={<SignUp />}/>
-	<Route path='/ForgotPassword' element={<ForgotPassword />}/>
-	<Route path='/UpdatePassword' element={<UpdatePassword />}/>
-	<Route path='/UpdatedPassword' element={<UpdatedPassword />}/>
-	<Route path='/Products' element={<><NavBar/><Products/><Footer/></>}/>
-	<Route path='/About' element={<><NavBar/><About /><Footer/></>}/>
-	{/*<Route path='/Departments' element={<><NavBar/><Departments /><Footer/></>}/>*/}
-	<Route path='/Appointments' element={<><NavBar/><Appointments /><Footer/></>}/>
-	
-	<Route path='/PatientSidebar' element={<PatientSidebar/>}>
-		<Route index element={<PatientDashboard />}/>
-		<Route path='PatientCalendar' element={<PatientCalendar />}/>
-		<Route path='PatientMessages' element={<PatientMessages />}/>
-		<Route path='PatientAppointments' element={<PatientAppointments />}/>
-		<Route path='PatientSettings' element={<PatientSettings />}/>
-	</Route>
+		</Routes>
+		
+		</BrowserRouter>
+	  );
+	}
 
-	<Route path='/ChatAi' element={<ChatAi />}>
-		<Route index element={<ChatBoard />}/>
-		<Route path='FrequentlyAsked' element={<FrequentlyAsked />}/>
-		<Route path='ChatBoard' element={<ClearConversation />}/>
-		<Route path='ChatAiSettings' element={<ChatAiSettings />}/>
-		<Route path='NewChat' element={<ChatBoard />}/>
-	</Route>
-
-	</Routes>
-	
-	</BrowserRouter>
-  );
-}
-
-export default WellBe;
+	export default WellBe;
