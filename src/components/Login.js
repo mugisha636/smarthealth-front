@@ -1,25 +1,31 @@
 import login from '../images/login.png'
 import React, { useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import {NavLink, Outlet } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
 
-
+    const navigate = useNavigate();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    async function signIn() {
-        let loginCredentials = { email, password }
-        console.log(loginCredentials)
-
-        let result = await fetch("https://smart-health.onrender.com/api/login", {
-            method: "POST",
-            body: JSON.stringify(loginCredentials),
-            headers: {
-                "Content-type": 'application/json'
-            }
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        const response = await fetch('https://smart-health.onrender.com/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
         })
-        const response = await result.json();
+        const data = await response.json();
+        if (response.ok) {
+          // Login successful, navigate to dashboard
+          navigate('/PatientSidebar');
+        } else {
+          // Login failed, display error message
+          console.log(data.message);
+        }
     }
 
     return (
@@ -52,6 +58,8 @@ function Login() {
                         Login
                     </h3>
 
+                    <form onSubmit={handleLogin}>
+
                     <div className="mt-14">
                         <div className="relative flex flex-col justify-center mt-2">
                             <p className=" font-semibold">
@@ -64,7 +72,9 @@ function Login() {
                             </span>
 
                             <input type="email"
+                                id='email'
                                 onChange={(e) => setEmail(e.target.value)}
+                                value={email}
                                 className="block mt-2 w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 placeholder="Email address" />
                         </div>
@@ -80,7 +90,9 @@ function Login() {
                             </span>
 
                             <input type="password"
+                                id='password'
                                 onChange={(e) => setPassword(e.target.value)}
+                                value={password}
                                 className="block mt-2 w-full justify-center px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 placeholder="********" />
                         </div>
@@ -94,7 +106,7 @@ function Login() {
 
                         <div className="mt-3">
                             <button
-                                onClick={signIn}
+                                type='submit'
                                 className="w-full shadow-lg shadow-blue-300 mt-4 px-6 py-3 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                                 Login
                             </button>
@@ -108,6 +120,7 @@ function Login() {
                             </div>
                         </div>
                     </div>
+                    </form>
                     {/* end of left side div with welcome header */}
                 </div>
             </div>
