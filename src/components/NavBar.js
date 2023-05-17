@@ -57,7 +57,7 @@ function NavBar() {
                 <div className='mt-7 flex justify-between px-32 font-semibold '>
 					<NavLink to='/' className='hover:text-blue-500 focus:text-blue-500' >Home</NavLink>
                     <NavLink to='/About' className='hover:text-blue-500 focus:text-blue-500' >About</NavLink>
-                    <NavLink to='/PatientSidebar' className='hover:text-blue-500 focus:text-blue-500'>Departments</NavLink>
+                    <NavLink to='' className='hover:text-blue-500 focus:text-blue-500'>Departments</NavLink>
 					<NavLink to='/Appointments' className='hover:text-blue-500 focus:text-blue-500'>Appointments</NavLink>
                     <NavLink to='/Products' className='hover:text-blue-500 focus:text-blue-500'>Products</NavLink>
                     <NavLink to='/NewsLetter' className='hover:text-blue-500 focus:text-blue-500'>Newsletter</NavLink>

@@ -25,6 +25,7 @@ function Login() {
         } else {
           // Login failed, display error message
           console.log(data.message);
+          alert('user not exist')
         }
     }
 

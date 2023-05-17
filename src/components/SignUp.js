@@ -3,34 +3,48 @@ import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react'
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
+import { useNavigate } from 'react-router-dom';
+
 
 function SignUp() {
-
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [telephone, setTelephone] = useState("")
-	const [sex, setSex] = useState("")
+    const [sex, setSex] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+    
     async function register() {
-
         const signupCredentials = { firstName, lastName, telephone, sex, email, password }
-
+        console.log(signupCredentials)
         try {
-				const response = await fetch("https://smart-health.onrender.com/api/signup", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify(signupCredentials),
-				});
-				
-				const result = await response.json();
-			} 
-		
-		catch (error) {}
+            const response = await fetch("https://smart-health.onrender.com/api/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(signupCredentials),
+            });
+            const result = await response.json();
+            console.log(result)
+            if (response.ok) {
+                // Login successful, navigate to dashboard
+                navigate('/login');
+
+                // notification
+alert('check your email to verify if you are not robot')
+               
+                // end notification
+              } else {
+                // Login failed, display error message
+                console.log(result.message);
+              }
+        } catch (error) {
+            console.log(error)
+        }
     }
+    
 	
 		const sexChanged = (e) => {
 			e.preventDefault();
@@ -101,15 +115,28 @@ function SignUp() {
 
                     {/* Start of phone number */}
 
-                        <div className="flex flex-col w-full ml-2">
+                        {/* <div className="flex flex-col w-full ml-2">
                             <p className=' text-xs'>
                                 Phone number
                             </p>
-                            <PhoneInput type="tel"
+                            <PhoneInput type="number"
                                 className='mt-2'
                                 value={telephone}
                                 onChange={(e) => setTelephone(telephone)}
                                 placeholder="enter phone number here" />
+                        </div> */}
+
+<div className="flex flex-col w-screen mt-8">
+                            <p className=' text-xs'>
+                                telephone
+                            </p>
+                            <input type="number"
+                                className="block mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
+          dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none
+          focus:ring focus:ring-opacity-40"
+                                value={telephone}
+                                onChange={(e) => setTelephone(e.target.value)}
+                                placeholder="" />
                         </div>
 
                     {/* End of phone number */}
