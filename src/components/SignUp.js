@@ -97,7 +97,7 @@ alert('check your email to verify if you are not robot')
                                 placeholder="" />
                         </div>
 
-                        <div className="flex flex-col w-screen ml-2 mt-8">
+                        <div className="flex flex-col w-full ml-2 mt-8">
                             <p className=' text-xs'>
                                 Second name
                             </p>
@@ -131,7 +131,7 @@ alert('check your email to verify if you are not robot')
                                 telephone
                             </p>
                             <input type="number"
-                                className="block mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
+                                className="block w-full mt-2 h-8 py-3 text-gray-700 bg-gray-50 border-2 rounded-lg px-2 dark:bg-gray-900 dark:text-gray-300
           dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none
           focus:ring focus:ring-opacity-40"
                                 value={telephone}
