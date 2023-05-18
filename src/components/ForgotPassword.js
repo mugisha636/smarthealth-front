@@ -1,6 +1,48 @@
-import {NavLink, Outlet} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom'
 
 function ForgotPassword() {
+    const [email, setEmail] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('https://smart-health.onrender.com/api/forgot-password', { 
+
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+       });
+       if (response.ok) {
+        const data = await response.json();
+        if (data.message) {
+          setSuccessMessage(data.message);
+          setErrorMessage('');
+          navigate("/Login")
+          window.alert('check your email')
+        } else {
+          setErrorMessage('Error: Invalid response from the server');
+          setSuccessMessage('');
+
+        }
+      } else {
+        const errorData = await response.json();
+        setErrorMessage(errorData.message);
+        setSuccessMessage('');
+      }
+    } catch (error) {
+      setErrorMessage(error.message);
+      setSuccessMessage('');
+  
+    }
+  };
+
     return (
 
         <div className='bg-white'>
@@ -39,10 +81,18 @@ function ForgotPassword() {
                         Enter the email address you used when you joined and we'll send you instructions to reset your password.<br/><br/> For security reasons, rest assured that we will never send your password via email.
                     </p>
 
+                    {successMessage && <p className="text-green-500 mb-4">{successMessage}</p>}
+                    {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
+
+
+        <form onSubmit={handleSubmit}>
                     <div className="mt-4">
                         <div className="relative flex flex-col justify-center mt-2">
 
-                            <input type="password" 
+                            <input type="email" 
+                             id="email"
+                              onChange={(e) => setEmail(e.target.value)}
+                              value={email}
                             className="block bg-gray-100 w-full justify-center px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" 
                             placeholder="" />
                         </div>
@@ -50,13 +100,14 @@ function ForgotPassword() {
                         {/* End of password */}
 
                         <div className=" flex mt-4 justify-center">
-                            <button className=" shadow-lg shadow-blue-300 mt-4 px-6 py-3 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-full hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                            <button type="submit" className=" shadow-lg shadow-blue-300 mt-4 px-6 py-3 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-full hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                                 Send reset instructions
                             </button>
 
                             
                         </div>
                     </div>
+                    </form>
                     {/* end of left side div with welcome header */}
                 </div>
             </div>
